@@ -6,7 +6,7 @@ import Wheel from "./classes/Wheel.js";
 import Cli from "./classes/Cli.js";
 
 // create an array of vehicles
-const vehicles = ["Car", "Motorbike", "Truck"];
+const vehicles: (Car)[] | (Motorbike)[] | (Truck)[] = [];
 
 // TODO: uncomment once trucks are implemented
 const truck1 = new Truck(Cli.generateVin(),"red", "Ford", "F-150", 2021, 5000, 120, [], 10000);
@@ -21,7 +21,7 @@ const car1 = new Car(
   3000,
   130,
   []
-);
+) as Car;
 
 // TODO: uncomment once motorbikes are implemented
 const motorbike1Wheels = [new Wheel(17, "Michelin"), new Wheel(17, "Michelin")];

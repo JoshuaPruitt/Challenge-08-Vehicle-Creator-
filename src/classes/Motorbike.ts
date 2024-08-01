@@ -15,6 +15,7 @@ class Motorbike extends Vehicle{
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
+  type?: string | undefined;
   
   // TODO: Create a constructor that accepts the properties of the Motorbike class
   // TODO: The constructor should call the constructor of the parent class, Vehicle
@@ -46,6 +47,8 @@ class Motorbike extends Vehicle{
     } else {
       this.wheels = wheels;
     }
+
+    this.type = "Motorbike"
   }
   
   // TODO: Implement the wheelie method

@@ -13,6 +13,7 @@ class Car extends Vehicle {
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
+  type?: string | undefined;
 
   // Constructor for the Car class
   constructor(
@@ -44,6 +45,8 @@ class Car extends Vehicle {
     } else {
       this.wheels = wheels;
     }
+
+    this.type = 'Car'
   }
 
   // Override the printDetails method from the Vehicle class
