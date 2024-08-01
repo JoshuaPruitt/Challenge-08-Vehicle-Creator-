@@ -18,7 +18,7 @@ class Truck extends Vehicle implements AbleToTow{
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
-  towingCapacity: number;
+  towingCapacity?: number | undefined;
   
   // TODO: Create a constructor that accepts the properties of the Truck class
   constructor(
@@ -30,7 +30,7 @@ class Truck extends Vehicle implements AbleToTow{
     weight: number,
     topSpeed: number,
     wheels: Wheel[],
-    towingCapacity: number,
+    towingCapacity?: number | undefined,
   ){
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     super();
@@ -54,9 +54,9 @@ class Truck extends Vehicle implements AbleToTow{
     
 
   // TODO: Implement the tow method from the AbleToTow interface
-  tow(vehicle: Truck | Motorbike | Car): void {
+  tow?(vehicle: Truck | Motorbike | Car): void {
     // TODO: Get the make an model of the vehicle if it exists
-    if(vehicle.make && vehicle.model !== null){
+    if(vehicle.make && vehicle.model !== null && this.towingCapacity !== undefined){
       // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
       if(vehicle.weight <= this.towingCapacity){
         // TODO: If it is, log that the vehicle is being towed

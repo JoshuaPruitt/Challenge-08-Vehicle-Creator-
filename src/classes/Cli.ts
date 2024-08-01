@@ -299,6 +299,7 @@ class Cli {
           this.findVehicleToTow(truck)
         } else {
           // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+          this.vehicles.tow(answers)
           this.performActions
         }
         
@@ -390,7 +391,7 @@ class Cli {
             }
           }
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
-        } else if(answers.action === 'Tow Vehicle' && ){
+        } else if(answers.action === 'Tow Vehicle' && this.getClassName === "Truck"){
         
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
         } else if(answers.action === "Wheelie" &&){
@@ -408,6 +409,11 @@ class Cli {
           this.performActions();
         }
       });
+  }
+
+  //grab the class name for comparissons
+  getClassName(){
+    return this.constructor.name;
   }
 
   // method to start the cli
