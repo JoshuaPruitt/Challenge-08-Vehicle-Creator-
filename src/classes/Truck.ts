@@ -19,7 +19,7 @@ class Truck extends Vehicle implements AbleToTow{
   topSpeed: number;
   wheels: Wheel[];
   towingCapacity: number;
-
+  
   // TODO: Create a constructor that accepts the properties of the Truck class
   constructor(
     vin: string,
@@ -30,7 +30,7 @@ class Truck extends Vehicle implements AbleToTow{
     weight: number,
     topSpeed: number,
     wheels: Wheel[],
-    towingCapacity: number
+    towingCapacity: number,
   ){
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     super();
